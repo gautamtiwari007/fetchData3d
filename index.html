@@ -42,7 +42,7 @@
     var storage = firebase.storage();
     var pathReference = storage.ref('scene.gltf');
     
-    storage.child('scene.gltf').getDownloadURL()
+    pathReference.getDownloadURL()
         .then((url) => {
             console.log(url);
             var img = document.getElementById('hiroMarker');
