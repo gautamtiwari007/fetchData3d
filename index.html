@@ -41,7 +41,10 @@
     // Create a reference with an initial file path and name
     var storage = firebase.storage();
     var pathReference = storage.ref('download3d/scene.gltf');
-
+    
+    var gsReference = storage.refFromURL('gs://ar-vr-12de3.appspot.com/download3d/scene.gltf');
+    var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/b/ar-vr-12de3.appspot.com/o/download3d%20scene.gltf');
+    
     pathReference.getDownloadURL()
         .then((url) => {
             console.log(url);
