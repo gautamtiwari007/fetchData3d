@@ -42,8 +42,8 @@
     var storage = firebase.storage();
     var pathReference = storage.ref('download3d/scene.gltf');
     
-    var gsReference = storage.refFromURL('gs://ar-vr-12de3.appspot.com/download3d/scene.gltf');
-    var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/b/ar-vr-12de3.appspot.com/o/download3d/scene.gltf');
+    var gsReference = storage.refFromUrl('gs://ar-vr-12de3.appspot.com/download3d/scene.gltf');
+    var httpsReference = storage.refFromUrl('https://firebasestorage.googleapis.com/b/ar-vr-12de3.appspot.com/o/download3d/scene.gltf');
     
     pathReference.getDownloadURL()
         .then((url) => {
