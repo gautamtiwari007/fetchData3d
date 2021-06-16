@@ -40,7 +40,7 @@
 
     // Create a reference with an initial file path and name
     var storage = firebase.storage();
-    var pathReference = storage.ref('download3d/scene.gltf');
+    var pathReference = storage.ref('scene.gltf');
     
     pathReference.getDownloadURL()
         .then((url) => {
