@@ -46,7 +46,7 @@
         .then((url) => {
             console.log(url);
             var object = document.getElementById('hiroMarker');
-            object.setAttribute('gltf-model', `url(${url})`);
+            object.setAttribute('gltf-model', url);
         })
         .catch((error) => {
             console.log(error);
