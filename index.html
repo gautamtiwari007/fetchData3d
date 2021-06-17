@@ -11,12 +11,17 @@
 <body style="margin : 0px; overflow: hidden;">
   <a-scene embedded arjs="sourceType: webcam;">
       <a-marker preset="hiro">
-        <a-entity scale="0.01 0.01 0.01"
-            gltf-model="url(https://cdn.glitch.com/90685ec0-0603-4bfc-886f-0ab209d5be40%2Ffresadora.glb?v=1623921356999)">
+        <a-entity id="hiroMarker" scale="0.01 0.01 0.01">
+<!--             gltf-model="url(https://cdn.glitch.com/90685ec0-0603-4bfc-886f-0ab209d5be40%2Ffresadora.glb?v=1623921356999)"> -->
         </a-entity>
       </a-marker>
   <a-entity camera>
   </a-entity>
   </a-scene>
 </body>
+  <script>
+        var obj = document.getElementById('hiroMarker');
+        var url = "https://cdn.glitch.com/90685ec0-0603-4bfc-886f-0ab209d5be40%2Ffresadora.glb?v=1623921356999";
+        obj.setAttribute('gltf-model', `url(${url})`);
+  </script>
 </html>
