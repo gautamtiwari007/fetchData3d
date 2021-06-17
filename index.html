@@ -45,15 +45,15 @@
 
     storageRef.child("fresadora.glb").getDownloadURL()
         .then((url) => {
-            var slicedUrl = url + "";
-            var finalUrl = slicedUrl.slice(0,83);
+//             var slicedUrl = url + "";
+//             var finalUrl = slicedUrl.slice(0,83);
         
             var xhr = new XMLHttpRequest();
             xhr.responseType = 'blob';
             xhr.onload = (event) => {
                 var blob = xhr.response;
             };
-            xhr.open('GET', finalUrl);
+            xhr.open('POST', url);
             xhr.send();
         
             var img = document.getElementById('hiroMarker');
