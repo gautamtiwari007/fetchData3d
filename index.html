@@ -42,18 +42,9 @@
     var storageRef = storage.ref();
 
     storageRef.child('fresadora.glb').getDownloadURL()
-        .then((url) => {
-        
-            var xhr = new XMLHttpRequest();
-            xhr.responseType = 'blob';
-            xhr.onload = (event) => {
-                var blob = xhr.response;
-            };
-            xhr.open('GET', url);
-            xhr.send();
-        
-            var img = document.getElementById('hiroMarker');
-            img.setAttribute('gltf-model', `url(${url})`);
+        .then((url) => {        
+            var obj = document.getElementById('hiroMarker');
+            obj.setAttribute('gltf-model', `url(${url})`);
         })
         .catch((error) => {
             console.log(error);
