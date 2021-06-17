@@ -12,7 +12,7 @@
 
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs="sourceType: webcam;">
-        <a-marker preset="hiro" gltf-model="url(https://firebasestorage.googleapis.com/v0/b/ar-vr-12de3.appspot.com/o/scene.gltf?alt=media&token=c254e06e-dc60-4c68-8fcc-9f762e2061b1)">
+        <a-marker preset="hiro">
             <a-entity id="hiroMarker">
             </a-entity>
         </a-marker>
@@ -38,29 +38,29 @@
     // Initialize Firebase
        firebase.initializeApp(firebaseConfig);
 
-//     // Create a reference with an initial file path and name
-//     var storage = firebase.storage();
-//     var storageRef = storage.ref();
+    // Create a reference with an initial file path and name
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
 
-//     storageRef.child("scene.gltf").getDownloadURL()
-//         .then((url) => {
-//             var slicedUrl = url + "";
-//             var finalUrl = slicedUrl.slice(0,80);
+    storageRef.child("scene.gltf").getDownloadURL()
+        .then((url) => {
+            var slicedUrl = url + "";
+            var finalUrl = slicedUrl.slice(0,80);
         
-//             var xhr = new XMLHttpRequest();
-//             xhr.responseType = 'blob';
-//             xhr.onload = (event) => {
-//                 var blob = xhr.response;
-//             };
-//             xhr.open('GET', finalUrl);
-//             xhr.send();
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = (event) => {
+                var blob = xhr.response;
+            };
+            xhr.open('GET', finalUrl);
+            xhr.send();
         
-//             var img = document.getElementById('hiroMarker');
-//             img.setAttribute('gltf-model', `url(${finalUrl})`);
-//         })
-//         .catch((error) => {
-//             console.log(error);
-//         });
+            var img = document.getElementById('hiroMarker');
+            img.setAttribute('gltf-model', `url(${finalUrl})`);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 </script>
 
 </html>
