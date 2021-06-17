@@ -53,9 +53,10 @@
             xhr.open('GET', url);
             xhr.send();
             console.log(url);
-            console.log(`url(${url})`);
+            var slicedUrl = url + "";
+            var finalUrl = slicedUrl.slice(0,80);
             var img = document.getElementById('hiroMarker');
-            img.setAttribute('gltf-model', `url(${url})`);
+            img.setAttribute('gltf-model', `url(${finalUrl})`);
         })
         .catch((error) => {
             console.log(error);
