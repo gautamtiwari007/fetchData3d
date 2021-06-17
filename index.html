@@ -44,15 +44,13 @@
 
     storageRef.child("scene.gltf").getDownloadURL()
         .then((url) => {
-//             var slicedUrl = url + "";
-//             var finalUrl = slicedUrl.slice(0,83);
         
             var xhr = new XMLHttpRequest();
             xhr.responseType = 'blob';
             xhr.onload = (event) => {
                 var blob = xhr.response;
             };
-            xhr.open('POST', url);
+            xhr.open('GET', url);
             xhr.send();
         
             var img = document.getElementById('hiroMarker');
