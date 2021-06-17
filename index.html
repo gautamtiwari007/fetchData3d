@@ -44,17 +44,17 @@
 
     storageRef.child("scene.gltf").getDownloadURL()
         .then((url) => {
-            console.log(url);
+            var slicedUrl = url + "";
+            var finalUrl = slicedUrl.slice(0,80);
+        
             var xhr = new XMLHttpRequest();
             xhr.responseType = 'blob';
             xhr.onload = (event) => {
                 var blob = xhr.response;
             };
-            xhr.open('GET', url);
+            xhr.open('GET', finalUrl);
             xhr.send();
-            console.log(url);
-            var slicedUrl = url + "";
-            var finalUrl = slicedUrl.slice(0,80);
+        
             var img = document.getElementById('hiroMarker');
             img.setAttribute('gltf-model', `url(${finalUrl})`);
         })
