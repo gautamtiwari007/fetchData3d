@@ -8,6 +8,7 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
     <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+    <script src=”https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 </head>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -56,7 +57,7 @@
             xhr.send();
         
             var img = document.getElementById('hiroMarker');
-            img.setAttribute('gltf-model', `url(${finalUrl})`);
+            img.setAttribute('gltf-model-next', `src: url(${finalUrl});`);
         })
         .catch((error) => {
             console.log(error);
