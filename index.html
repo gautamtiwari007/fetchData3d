@@ -44,6 +44,7 @@
 
     storageRef.child("scene.gltf").getDownloadURL()
         .then((url) => {
+            console.log(url);
             var xhr = new XMLHttpRequest();
             xhr.responseType = 'blob';
             xhr.onload = (event) => {
@@ -51,7 +52,8 @@
             };
             xhr.open('GET', url);
             xhr.send();
-
+            console.log(url);
+            console.log(`url(${url})`);
             var img = document.getElementById('hiroMarker');
             img.setAttribute('gltf-model', `url(${url})`);
         })
