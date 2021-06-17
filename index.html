@@ -18,10 +18,34 @@
   <a-entity camera>
   </a-entity>
   </a-scene>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+  
+  <script id="MainScript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyB2up9-H2w7OgbTJjubL7OUAK9uWjDOkJI",
+        authDomain: "ar-vr-12de3.firebaseapp.com",
+        projectId: "ar-vr-12de3",
+        storageBucket: "ar-vr-12de3.appspot.com",
+        messagingSenderId: "233235157468",
+        appId: "1:233235157468:web:62a38b06f5b83cc61dbf19",
+        measurementId: "G-2S0NRB26DN",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Create a reference with an initial file path and name
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+    storageRef.child('fresadora.glb').getDownloadURL()
+        .then((url) => {
+            var obj = document.getElementById('hiroMarker');
+            obj.setAttribute('gltf-model', `url(${url})`);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+</script>
 </body>
-  <script>
-        var obj = document.getElementById('hiroMarker');
-        var url = "https://cdn.glitch.com/90685ec0-0603-4bfc-886f-0ab209d5be40%2Ffresadora.glb?v=1623921356999";
-        obj.setAttribute('gltf-model', `url(${url})`);
-  </script>
 </html>
