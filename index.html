@@ -43,7 +43,7 @@
     var storage = firebase.storage();
     var storageRef = storage.ref();
 
-    storageRef.child("fresadora.glb").getDownloadURL()
+    storageRef.child("scene.gltf").getDownloadURL()
         .then((url) => {
 //             var slicedUrl = url + "";
 //             var finalUrl = slicedUrl.slice(0,83);
