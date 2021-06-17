@@ -42,10 +42,10 @@
     var storage = firebase.storage();
     var storageRef = storage.ref();
 
-    storageRef.child("scene.gltf").getDownloadURL()
+    storageRef.child("fresadora.glb").getDownloadURL()
         .then((url) => {
             var slicedUrl = url + "";
-            var finalUrl = slicedUrl.slice(0,80);
+            var finalUrl = slicedUrl.slice(0,83);
         
             var xhr = new XMLHttpRequest();
             xhr.responseType = 'blob';
