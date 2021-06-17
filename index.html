@@ -53,7 +53,7 @@
             xhr.send();
 
             var img = document.getElementById('hiroMarker');
-            img.gltf-model = url;
+            img.setAttribute('gltf-model', `url(${url})`);
         })
         .catch((error) => {
             console.log(error);
