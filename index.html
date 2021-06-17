@@ -42,7 +42,7 @@
     var storage = firebase.storage();
     var storageRef = storage.ref();
 
-    storageRef.child("scene.gltf").getDownloadURL()
+    storageRef.child('fresadora.glb').getDownloadURL()
         .then((url) => {
         
             var xhr = new XMLHttpRequest();
